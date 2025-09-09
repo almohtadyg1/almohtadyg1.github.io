@@ -21,14 +21,14 @@
     }
     
     .redirect-container {
-      max-width: 90%;          /* shrink to fit small screens */
+      max-width: 95%;
       padding: 20px;
       box-sizing: border-box;
     }
     
     .logo {
-      width: 120px;
-      max-width: 40vw;         /* shrink on small screens */
+      width: 140px;
+      max-width: 50vw;    /* scales but keeps readable size */
       height: auto;
       margin-bottom: 20px;
       animation: pulse 1.5s infinite ease-in-out;
@@ -40,21 +40,21 @@
     }
     
     h1 {
-      font-size: clamp(1.5rem, 5vw, 2.5rem); /* scales between mobile and desktop */
+      font-size: clamp(1.8rem, 6vw, 2.8rem);  /* bigger min size */
       margin-bottom: 10px;
       text-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
     
     p {
-      font-size: clamp(1rem, 3.5vw, 1.2rem); /* adaptive font */
+      font-size: clamp(1.1rem, 4vw, 1.4rem);  /* more readable baseline */
       margin-top: 0;
     }
     
     a {
       display: inline-block;
-      margin-top: 15px;
-      padding: clamp(10px, 3vw, 12px) clamp(18px, 6vw, 24px);
-      font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+      margin-top: 18px;
+      padding: clamp(12px, 3vw, 14px) clamp(22px, 7vw, 28px);
+      font-size: clamp(1rem, 4vw, 1.2rem);
       font-weight: bold;
       border-radius: 20px;
       background: #00ffe5;
@@ -66,6 +66,23 @@
     a:hover {
       background: #00d9c5;
       transform: scale(1.05);
+    }
+    
+    /* Extra safety for tiny screens (old phones < 360px wide) */
+    @media (max-width: 360px) {
+      .logo {
+        width: 100px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      a {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
     }
   </style>
   <script>
