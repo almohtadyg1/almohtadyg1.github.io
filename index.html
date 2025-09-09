@@ -25,6 +25,18 @@
       padding: 20px;
     }
 
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+    }
+
     h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
@@ -39,31 +51,34 @@
     a {
       display: inline-block;
       margin-top: 15px;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border: 2px solid #00ffe5;
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      font-weight: bold;
       border-radius: 20px;
+      background: #00ffe5;
       color: white;
       text-decoration: none;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     a:hover {
-      background: #00ffe533;
+      background: #00d9c5;
+      transform: scale(1.05);
     }
   </style>
   <script>
     // JS fallback in case meta refresh fails
     setTimeout(function() {
       window.location.href = "https://almohtadyg1.pythonanywhere.com/";
-    }, 3000);
+    }, 2000);
   </script>
 </head>
 <body>
   <div class="redirect-container">
+    <img src="static/img/Logo.png" alt="Logo" class="logo">
     <h1>Redirecting...</h1>
     <p>You’ll be taken to my website shortly.</p>
-    <a href="https://almohtadyg1.pythonanywhere.com/">Click here if not redirected</a>
+    <a href="https://almohtadyg1.pythonanywhere.com/">Go Now</a>
   </div>
 </body>
 </html>
