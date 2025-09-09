@@ -21,14 +21,15 @@
     }
     
     .redirect-container {
-      max-width: 95%;
+      max-width: 600px;     /* cap for desktop */
+      width: 90%;           /* take 90% of screen by default */
       padding: 20px;
       box-sizing: border-box;
     }
     
     .logo {
-      width: 140px;
-      max-width: 50vw;    /* scales but keeps readable size */
+      width: 150px;
+      max-width: 50%;       /* shrink gracefully */
       height: auto;
       margin-bottom: 20px;
       animation: pulse 1.5s infinite ease-in-out;
@@ -40,13 +41,13 @@
     }
     
     h1 {
-      font-size: clamp(1.8rem, 6vw, 2.8rem);  /* bigger min size */
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
       margin-bottom: 10px;
       text-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
     
     p {
-      font-size: clamp(1.1rem, 4vw, 1.4rem);  /* more readable baseline */
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
       margin-top: 0;
     }
     
@@ -68,20 +69,23 @@
       transform: scale(1.05);
     }
     
-    /* Extra safety for tiny screens (old phones < 360px wide) */
-    @media (max-width: 360px) {
+    /* Extra tweak for very small screens */
+    @media (max-width: 480px) {
+      .redirect-container {
+        width: 90%;       /* force 90% on small devices */
+      }
       .logo {
-        width: 100px;
+        width: 120px;
       }
       h1 {
-        font-size: 1.6rem;
+        font-size: 2rem;
       }
       p {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
       a {
-        font-size: 1rem;
-        padding: 10px 20px;
+        width: 100%;      /* make button stretch across container */
+        padding: 12px;
       }
     }
   </style>
